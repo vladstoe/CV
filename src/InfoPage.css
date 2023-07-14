@@ -1,0 +1,143 @@
+.info-page {
+    padding-bottom: 300px;
+    background: linear-gradient(to right, darkgrey, grey);
+}
+
+.info-page h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.intro {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #555555;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.profession {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #777777;
+}
+
+.skills {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #444444;
+}
+
+.info-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    background-color: #f8f8f8;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    font-size: 20px;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.contact-info {
+    font-size: 16px;
+    color: #333333;
+}
+
+.info-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.section-content {
+    font-size: 16px;
+    color: #555555;
+}
+
+.social-icon {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.instagram-icon {
+    color: #C13584;
+}
+
+.linkedin-icon {
+    color: #0A66C2;
+}
+
+.nationality {
+    background: linear-gradient(90deg, blue, yellow, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.phone:hover {
+    color: rgb(100, 0, 100);
+    /* Replace with the desired color */
+}
+
+.mail:hover {
+    color: rgb(100, 0, 100);
+    /* Replace with the desired color */
+}
+
+.contact-info {
+    transition: color 0.3s ease;
+}
