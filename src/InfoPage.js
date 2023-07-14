@@ -19,7 +19,7 @@ const InfoPage = () => {
                     <img src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQkrjYxSfSHeCEA7hkPy8e2JphDsfFHZVKqx-3t37E4XKr-AT7DML8IwtwY0TnZsUcQ" alt="Profile" />
                 </div>
                 <div className="profile-details">
-                    <h1 className="profile-name">pla Stoenescu</h1>
+                    <h1 className="profile-name">Vlad Stoenescu</h1>
                     <div className="contact-section">
                         <ul className="contact-list">
                             <li>
