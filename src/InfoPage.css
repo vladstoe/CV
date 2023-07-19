@@ -1,3 +1,24 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Add this keyframe for fade-out animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .info-page {
     padding-bottom: 300px;
     background: linear-gradient(to right, darkgrey, grey);
@@ -141,3 +162,24 @@
 .contact-info {
     transition: color 0.3s ease;
 }
+
+/* InfoPage.css */
+
+.romanian-flag {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start with opacity 0, so the flag is hidden initially */
+  }
+  
+  .flag-visible {
+    animation: fadeIn 0.5s forwards; /* Show the flag using fadeIn animation when it is visible */
+  }
+  
+  .romanian-flag img {
+    width: 50px;
+    height: 50px;
+  }
