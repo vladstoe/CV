@@ -1,49 +1,39 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
-import './ProjectsPage.css';
+import './PersonalProjectsPage.css';
 
 const projects = [
     {
         id: 1,
-        title: 'Security Software Development - TU/e',
+        title: 'React Native app',
         bulletPoints: [
-            'Implementing a fully-fledged spoofing tool for ARP and DNS using Scapy, based on Ettercap’s implementation of the two attacks (ARP and DNS spoofing), which uses MITM attack, during which the attacker positions themselves between the communication of two parties, either listening to the communication or interfering with the packets sent or received by both sides',
-            ' Implementing virtual machine setups for testing and development purposes',
-        ],
-        iframeUrl: 'https://www.youtube.com/embed/fWtkqE66ns4',
+            "Developed an application using React Native (JavaScript) for the frontend and Firebase for the backend, enabling the creation of a versatile web and Android application. This app's primary focus lies in offering a user-friendly simulated betting experience",
+            "Employed Firebase's powerful capabilities, including email/password authentication and Firestore database integration, to craft a robust foundation for the app. This facilitated the management of essential user data, underpinning the core logic of the application",
+            "Firestore served as the repository for critical data, encompassing users' usernames, their available funds, and their response status regarding the question. It also stored aggregated information, including the total funds amassed for each answer option and the identifiers of users who selected each choice. Additionally, Firestore housed the question itself along with its two available options. To circumvent the need for Firebase's paid Functions feature, a clever 'reset' field was employed, ensuring seamless functionality without incurring additional costs"        ],
+        iframeUrl: 'https://qandmoney.netlify.app/',
 
     },
     {
         id: 2,
-        title: 'App development - TU/e',
+        title: 'Android Studio app',
         bulletPoints: [
-            'Developed Quizy, an entertainment Android app that allows users to create questions and take quizzes on any topic',
-            'Created the user interface (UI) design for Quizy app using Android Studio\'s built-in layout editor',
-            'Worked with the development team to ensure a consistent and user-friendly design across all screens and features',
-            'Designed an online leaderboard to compare players\' scores with others',
-            'Developed the Quizy app using Java and XML programming languages in Android Studio'
+            'First project created for a client, dedicated to the creation of a dynamic application where users connect based on their chosen talents and skills. The app also seamlessly integrated a user-friendly chat platform, enabling meaningful interactions among its users',
+            'Technologies used consist of Android Studio (Java) for frontend and Firebase for backend',
+            "Implemented a suite of Firebase functionalities, including email/password authentication, Firestore for data management driving the app's logic, and Storage for preserving user profile pictures",
+            "Firestore served as the foundational repository for critical data elements, including user profiles encompassing usernames and their desired learning and teaching skills. Additionally, it managed chat-related information, housing details about chat room participants, message transcripts, and comprehensive message attributes such as timestamps, sender IDs, and message content"
+
+
+
+
         ],
         iframeUrl: '',
 
     },
-    // Add more projects with bullet points
-    {
-        id: 3,
-        title: 'Web technologies - TU/e',
-        bulletPoints: [
-            ' Developed a Python-based web tool to simplify eye-tracking data analysis and enhance data visualization',
-            ' Solved data analysis challenges by enabling users to upload and analyze their own large datasets',
-            'Created interactive visualizations to improve data analysis and interpretation',
-            'Collaborated with team members to design and implement the tool and presented findings in a comprehensive report',
-        ],
-        iframeUrl: '',
 
-    },
-    // ...
 ];
 
-const ProjectsPage = () => {
+const PersonalProjectsPage = () => {
     const [expandedId, setExpandedId] = useState(null);
 
     const toggleCard = (id) => {
@@ -104,4 +94,4 @@ const ProjectsPage = () => {
     );
 };
 
-export default ProjectsPage;
+export default PersonalProjectsPage;

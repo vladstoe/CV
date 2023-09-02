@@ -60,12 +60,16 @@ const EducationPage = () => {
     return (
         <div className="education-page">
             <nav className="navigation">
+            <Link to="/personal" className="nav-link" activeClassName="active">
+                Personal Projects
+                </Link>
                 <Link to="/projects" className="nav-link" activeClassName="active">
-                    Projects
+                University Projects
                 </Link>
                 <Link to="/education" className="nav-link" activeClassName="active">
                     Education
                 </Link>
+
             </nav>
             <div className="content">
                 {education.map((item) => (

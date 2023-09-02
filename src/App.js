@@ -4,6 +4,7 @@ import InfoPage from './InfoPage';
 import ProjectsPage from './ProjectsPage';
 import EducationPage from './EducationPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PersonalProjectsPage from './PersonalProjectsPage';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/" element={<ProjectsPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/education" element={<EducationPage />} />
+            <Route path="/personal" element={<PersonalProjectsPage />} />
           </Routes>
         </div>
       </div>
