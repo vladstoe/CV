@@ -21,8 +21,8 @@ const projects = [
             'First project created for a client, dedicated to the creation of a dynamic application where users connect based on their chosen talents and skills. The app also seamlessly integrated a user-friendly chat platform, enabling meaningful interactions among its users',
             'Technologies used consist of Android Studio (Java) for frontend and Firebase for backend',
             "Implemented a suite of Firebase functionalities, including email/password authentication, Firestore for data management driving the app's logic, and Storage for preserving user profile pictures",
-            "Firestore served as the foundational repository for critical data elements, including user profiles encompassing usernames and their desired learning and teaching skills. Additionally, it managed chat-related information, housing details about chat room participants, message transcripts, and comprehensive message attributes such as timestamps, sender IDs, and message content"
-
+            "Firestore served as the foundational repository for critical data elements, including user profiles encompassing usernames and their desired learning and teaching skills. Additionally, it managed chat-related information, housing details about chat room participants, message transcripts, and comprehensive message attributes such as timestamps, sender IDs, and message content",
+            "Android apk link: https://www.upload-apk.com/mE6ZxGx7AO0Ah0G"
 
 
 
