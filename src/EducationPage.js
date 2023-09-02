@@ -8,7 +8,7 @@ const education = [
         id: 1,
         university: 'Eindhoven University of Technology',
         degree: 'Computer Science and Engineering Degree',
-        period: '09/2019-present',
+        period: '2019-2023',
         bulletPoints: [],
     },
     {
