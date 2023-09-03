@@ -42,7 +42,7 @@ const InfoPage = () => {
     <div className="info-page">
       <div className="profile-section">
         <div className="profile-picture">
-          <img src="https://media.licdn.com/dms/image/D4E03AQElerD_v40f4w/profile-displayphoto-shrink_800_800/0/1684232290413?e=1694649600&v=beta&t=lJ6GU66OiKtfq-iMbt19NB5xRo1KM4dIppDTky4ZBno" alt="Profile" />
+          <img src="https://i.ibb.co/NYRX5jn/Whats-App-Image-2023-09-03-at-17-35-20-2.jpg" alt="Profile" />
         </div>
         <div className="profile-details">
           <h1 className="profile-name">Vlad Stoenescu</h1>
