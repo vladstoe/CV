@@ -75,7 +75,7 @@ const InfoPage = () => {
         <h2 className="section-title">About Me</h2>
         <div className="section-content">
           <p>
-            I am a motivated Computer Science student from Romania with a passion for technology and a desire to make a difference. Currently pursuing my degree, I have gained a solid understanding of programming languages, algorithms, and software development principles. My coursework has equipped me with strong problem-solving skills and the ability to approach challenges with a logical mindset in security, and data analysis. I am seeking internships or entry-level roles where I can make a meaningful impact while expanding my skill set. With a strong passion for software development, I am ready to contribute to the ever-evolving field of technology.
+            I am a motivated Computer Science student from Romania with a passion for technology and a desire to make a difference. Currently pursuing my degree, I have gained a solid understanding of programming languages, algorithms, and software development principles. My coursework has equipped me with strong problem-solving skills and the ability to approach challenges with a logical mindset in security, and data analysis. I am seeking entry-level roles where I can make a meaningful impact while expanding my skill set. With a strong passion for software development, I am ready to contribute to the ever-evolving field of technology.
           </p>
         </div>
         <div className="profile-social">
