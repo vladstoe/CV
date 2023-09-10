@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import InfoPage from './InfoPage';
 import ProjectsPage from './ProjectsPage';
@@ -7,6 +7,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PersonalProjectsPage from './PersonalProjectsPage';
 
 const App = () => {
+  useEffect(() => {
+    document.title = "Vlad's CV"; // Set your universal tab title here
+  }, []);
+
   return (
     <Router>
       <div className="app">
