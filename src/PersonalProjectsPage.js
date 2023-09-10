@@ -27,6 +27,21 @@ const projects = [
 
 
         ],
+        iframeUrl: 'https://www.youtube.com/embed/uXgTkaQn004',
+
+    },
+
+    {
+        id: 3,
+        title: 'This React website',
+        bulletPoints: [
+            "Created a dynamic website using React (JavaScript) for the frontend, focusing on delivering a comprehensive overview of my personal information and accomplishments, with a primary emphasis on the frontend experience and design, without implementing any backend functionalities"
+
+
+
+
+
+        ],
         iframeUrl: '',
 
     },
