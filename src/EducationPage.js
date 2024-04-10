@@ -7,7 +7,7 @@ const education = [
     {
         id: 1,
         university: 'Eindhoven University of Technology',
-        degree: 'Computer Science and Engineering Degree',
+        degree: 'Computer Science and Engineering Bachelor\'s Degree',
         period: '2019-2023',
         bulletPoints: [],
     },
