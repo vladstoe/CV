@@ -1,28 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   display: flex;
   height: 100vh;
-  background-color: #f9f9f9;
+  padding: 20px;
+  /* If padding is required on the whole app */
+  background: linear-gradient(to right, darkgrey, rgb(49, 49, 49));
+  /* Continuous gradient */
+  box-shadow: none;
+  /* Ensure no box shadow */
+  border: none;
+  /* Ensure no borders */
 }
 
-.left-section {
+.left-section,
+.right-section {
   flex: 1;
   overflow-y: scroll;
-  padding: 20px;
-  background: linear-gradient(to right, darkgrey, grey);
   scrollbar-width: none;
+  /* Firefox */
   -ms-overflow-style: none;
+  /* IE and Edge */
 }
 
-.left-section::-webkit-scrollbar {
+.left-section::-webkit-scrollbar,
+.right-section::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, and Opera */
 }
 
 .right-section {
-  flex: 1;
-  overflow-y: scroll;
-  padding: 20px;
-  background: linear-gradient(to right, grey, rgb(49, 49, 49));
   scrollbar-width: thin;
   /* Firefox */
   scrollbar-color: transparent transparent;
@@ -43,6 +54,7 @@
   background-color: transparent;
   /* Chrome, Safari, and Opera */
   transition: background-color 0.3s ease;
+  /* Transition for thumb color */
 }
 
 .right-section:hover::-webkit-scrollbar-thumb {

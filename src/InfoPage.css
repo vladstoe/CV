@@ -21,7 +21,18 @@
 
 .info-page {
     padding-bottom: 300px;
-    background: linear-gradient(to right, darkgrey, grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    background-color: transparent;
+    /* Ensure background is transparent */
+    border: none;
+    /* No border */
+    box-shadow: none;
+    /* No box shadows */
 }
 
 .info-page h1 {
@@ -54,15 +65,6 @@
     color: #444444;
 }
 
-.info-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding: 50px;
-    background-color: #f8f8f8;
-}
 
 .profile-section {
     display: flex;
@@ -172,14 +174,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Start with opacity 0, so the flag is hidden initially */
-  }
-  
-  .flag-visible {
-    animation: fadeIn 0.5s forwards; /* Show the flag using fadeIn animation when it is visible */
-  }
-  
-  .romanian-flag img {
+    opacity: 0;
+    /* Start with opacity 0, so the flag is hidden initially */
+}
+
+.flag-visible {
+    animation: fadeIn 0.5s forwards;
+    /* Show the flag using fadeIn animation when it is visible */
+}
+
+.romanian-flag img {
     width: 50px;
     height: 50px;
-  }
+}

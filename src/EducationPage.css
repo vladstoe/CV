@@ -27,7 +27,7 @@
 
 .content {
     padding: 20px;
-    background: linear-gradient(to right, grey, rgb(49, 49, 49));
+    background: transparent;
 }
 
 .content h1 {
