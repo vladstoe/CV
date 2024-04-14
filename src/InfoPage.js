@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './InfoPage.css';
 
 const InfoPage = () => {
@@ -66,7 +66,7 @@ const InfoPage = () => {
               </li>
             </ul>
             {remainingClicks > 0 && clickedCount > 0 && (
-              <p>{`${remainingClicks} clicks left`}</p>
+              <p style={{ color: 'white' }}>{`${remainingClicks} clicks left`}</p>
             )}
           </div>
         </div>
