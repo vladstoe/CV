@@ -10,7 +10,7 @@ const projects = [
         bulletPoints: [
             "Developed an application using React Native (JavaScript) for the frontend and Firebase for the backend, enabling the creation of a versatile web and Android application. This app's primary focus lies in offering a user-friendly simulated betting experience",
             "Employed Firebase's powerful capabilities, including email/password authentication and Firestore database integration, to craft a robust foundation for the app. This facilitated the management of essential user data, underpinning the core logic of the application",
-            "Firestore served as the repository for critical data, encompassing users' usernames, their available funds, and their response status regarding the question. It also stored aggregated information, including the total funds amassed for each answer option and the identifiers of users who selected each choice. Additionally, Firestore housed the question itself along with its two available options. To circumvent the need for Firebase's paid Functions feature, a clever 'reset' field was employed, ensuring seamless functionality without incurring additional costs"        ],
+            "Firestore served as the repository for critical data, encompassing users' usernames, their available funds, and their response status regarding the question. It also stored aggregated information, including the total funds amassed for each answer option and the identifiers of users who selected each choice. Additionally, Firestore housed the question itself along with its two available options. To circumvent the need for Firebase's paid Functions feature, a clever 'reset' field was employed, ensuring seamless functionality without incurring additional costs"],
         iframeUrl: 'https://qandmoney.netlify.app/',
 
     },
@@ -62,7 +62,7 @@ const PersonalProjectsPage = () => {
     return (
         <div className="projects-page">
             <nav className="navigation">
-            <Link to="/personal" className="nav-link" activeClassName="active">
+                <Link to="/personal" className="nav-link" activeClassName="active">
                     Personal Projects
                 </Link>
                 <Link to="/projects" className="nav-link" activeClassName="active" end>
@@ -71,12 +71,10 @@ const PersonalProjectsPage = () => {
                 <Link to="/education" className="nav-link" activeClassName="active">
                     Education
                 </Link>
-
-
             </nav>
             <div className="content">
                 {projects.map((project) => (
-                    <div className={`project-card ${isExpanded(project.id) ? 'expanded' : ''}`} key={project.id} onClick={() => toggleCard(project.id)}>
+                    <div className={`project-card ${isExpanded(project.id) ? 'expanded' : ''}`} key={project.id} onClick={() => toggleCard(project.id, project.iframeUrl)}>
                         <div className="project-header">
                             <h2>{project.title}</h2>
                             <p>{project.description}</p>
@@ -86,14 +84,16 @@ const PersonalProjectsPage = () => {
                                 <li key={index}>{point}</li>
                             ))}
                         </ul>
-                        <div className="expand-icon-container">
-                            {isExpanded(project.id) ? (
-                                <FaAngleUp className="expand-icon" onClick={() => toggleCard(project.id)} />
-                            ) : (
-                                <FaAngleDown className="expand-icon" onClick={() => toggleCard(project.id)} />
-                            )}
-                        </div>
-                        {isExpanded(project.id) && (
+                        {project.iframeUrl && (
+                            <div className="expand-icon-container">
+                                {isExpanded(project.id) ? (
+                                    <FaAngleUp className="expand-icon" onClick={(e) => { e.stopPropagation(); toggleCard(project.id, project.iframeUrl); }} />
+                                ) : (
+                                    <FaAngleDown className="expand-icon" onClick={(e) => { e.stopPropagation(); toggleCard(project.id, project.iframeUrl); }} />
+                                )}
+                            </div>
+                        )}
+                        {isExpanded(project.id) && project.iframeUrl && (
                             <div className="expanded-content">
                                 <h3 className="demo-label">Demo</h3>
                                 <div className="iframe-container">
@@ -101,7 +101,6 @@ const PersonalProjectsPage = () => {
                                 </div>
                             </div>
                         )}
-
                     </div>
                 ))}
             </div>

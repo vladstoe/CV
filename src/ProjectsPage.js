@@ -57,7 +57,7 @@ const ProjectsPage = () => {
     return (
         <div className="projects-page">
             <nav className="navigation">
-            <Link to="/personal" className="nav-link" activeClassName="active">
+                <Link to="/personal" className="nav-link" activeClassName="active">
                     Personal Projects
                 </Link>
                 <Link to="/projects" className="nav-link" activeClassName="active" end>
@@ -66,12 +66,10 @@ const ProjectsPage = () => {
                 <Link to="/education" className="nav-link" activeClassName="active">
                     Education
                 </Link>
-
-
             </nav>
             <div className="content">
                 {projects.map((project) => (
-                    <div className={`project-card ${isExpanded(project.id) ? 'expanded' : ''}`} key={project.id} onClick={() => toggleCard(project.id)}>
+                    <div className={`project-card ${isExpanded(project.id) ? 'expanded' : ''}`} key={project.id} onClick={() => toggleCard(project.id, project.iframeUrl)}>
                         <div className="project-header">
                             <h2>{project.title}</h2>
                             <p>{project.description}</p>
@@ -81,14 +79,16 @@ const ProjectsPage = () => {
                                 <li key={index}>{point}</li>
                             ))}
                         </ul>
-                        <div className="expand-icon-container">
-                            {isExpanded(project.id) ? (
-                                <FaAngleUp className="expand-icon" onClick={() => toggleCard(project.id)} />
-                            ) : (
-                                <FaAngleDown className="expand-icon" onClick={() => toggleCard(project.id)} />
-                            )}
-                        </div>
-                        {isExpanded(project.id) && (
+                        {project.iframeUrl && (
+                            <div className="expand-icon-container">
+                                {isExpanded(project.id) ? (
+                                    <FaAngleUp className="expand-icon" onClick={(e) => { e.stopPropagation(); toggleCard(project.id, project.iframeUrl); }} />
+                                ) : (
+                                    <FaAngleDown className="expand-icon" onClick={(e) => { e.stopPropagation(); toggleCard(project.id, project.iframeUrl); }} />
+                                )}
+                            </div>
+                        )}
+                        {isExpanded(project.id) && project.iframeUrl && (
                             <div className="expanded-content">
                                 <h3 className="demo-label">Demo</h3>
                                 <div className="iframe-container">

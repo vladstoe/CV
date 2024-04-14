@@ -14,6 +14,11 @@ const App = () => {
   return (
     <Router>
       <div className="app">
+
+      <video autoPlay="autoplay" loop="loop" muted playsInline className="video-background">
+        <source src="/5K Shooting Stars ★ 1-Hour Night-Sky ★ Video Background - UHD Animation ║ HD Longest FREE 4K - Trim.mp4" type="video/mp4" />
+      </video>
+
         <div className="left-section">
           <InfoPage />
         </div>

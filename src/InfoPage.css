@@ -86,9 +86,9 @@
 }
 
 .profile-name {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
-    color: #333333;
+    color: white;
 }
 
 .contact-list {
@@ -110,7 +110,7 @@
 
 .contact-info {
     font-size: 16px;
-    color: #333333;
+    color: white;
 }
 
 .info-section {
@@ -120,22 +120,23 @@
 .section-title {
     font-size: 24px;
     font-weight: bold;
-    color: #333333;
+    color: white;
     margin-bottom: 10px;
 }
 
 .section-content {
     font-size: 16px;
-    color: #333333;
+    color: white;
 }
 
 .social-icon {
     font-size: 28px;
     margin-right: 10px;
+    margin-top: 20px;
 }
 
-.instagram-icon {
-    color: #C13584;
+.github-icon {
+    color: white;
 }
 
 .linkedin-icon {

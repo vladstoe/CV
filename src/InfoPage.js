@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './InfoPage.css';
 
 const InfoPage = () => {
@@ -45,7 +45,7 @@ const InfoPage = () => {
           <img src="https://i.ibb.co/NYRX5jn/Whats-App-Image-2023-09-03-at-17-35-20-2.jpg" alt="Profile" />
         </div>
         <div className="profile-details">
-          <h1 className="profile-name">Vlad Stoenescu</h1>
+          <p className="profile-name">Vlad Stoenescu</p>
           <div className="contact-section">
             <ul className="contact-list">
               <li onClick={handleRomanianClick} onMouseLeave={resetClickCounter} style={{ cursor: 'pointer' }}>
@@ -75,12 +75,12 @@ const InfoPage = () => {
         <h2 className="section-title">About Me</h2>
         <div className="section-content">
           <p>
-            I am a motivated Computer Science student from Romania with a passion for technology and a desire to make a difference. Currently pursuing my degree, I have gained a solid understanding of programming languages, algorithms, and software development principles. My coursework has equipped me with strong problem-solving skills and the ability to approach challenges with a logical mindset in security, and data analysis. I am seeking entry-level roles where I can make a meaningful impact while expanding my skill set. With a strong passion for software development, I am ready to contribute to the ever-evolving field of technology.
+            I am a motivated Computer Science student from Romania with a passion for technology and a desire to make a difference. Currently pursuing my Master's degree in Computer Science, I have gained a solid understanding of programming languages, algorithms, and software development principles through my Bachelor's studies in the same field. My coursework has equipped me with strong problem-solving skills and the ability to approach challenges with a logical mindset in security, and data analysis. I am seeking entry-level roles where I can make a meaningful impact while expanding my skill set. With a strong passion for software development, I am ready to contribute to the ever-evolving field of technology.
           </p>
         </div>
         <div className="profile-social">
-          <a href="https://www.instagram.com/vladstoenescu" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} className="social-icon instagram-icon" />
+          <a href="https://github.com/vladstoe" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} className="social-icon github-icon" />
           </a>
           <a href="https://www.linkedin.com/in/vlad-stoenescu-4a854020a/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} className="social-icon linkedin-icon" />

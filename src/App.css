@@ -9,12 +9,24 @@
   height: 100vh;
   padding: 20px;
   /* If padding is required on the whole app */
-  background: linear-gradient(to right, darkgrey, rgb(49, 49, 49));
+  background: transparent;
   /* Continuous gradient */
   box-shadow: none;
   /* Ensure no box shadow */
   border: none;
   /* Ensure no borders */
+}
+
+.video-background {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
 }
 
 .left-section,

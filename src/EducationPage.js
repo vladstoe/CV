@@ -49,42 +49,43 @@ const education = [
 const EducationPage = () => {
     const [expandedId, setExpandedId] = useState(null);
 
-    const toggleCard = (id) => {
-        if (expandedId === id) {
-            setExpandedId(null);
-        } else {
-            setExpandedId(id);
+    const toggleCard = (id, hasDetails) => {
+        if (hasDetails) {
+            setExpandedId(prevId => prevId === id ? null : id);
         }
     };
+
+    const hasDetails = (item) => item.bulletPoints.length > 0 || (item.examSubjects && item.examSubjects.length > 0);
 
     return (
         <div className="education-page">
             <nav className="navigation">
-            <Link to="/personal" className="nav-link" activeClassName="active">
-                Personal Projects
+                <Link to="/personal" className="nav-link" activeClassName="active">
+                    Personal Projects
                 </Link>
                 <Link to="/projects" className="nav-link" activeClassName="active">
-                University Projects
+                    University Projects
                 </Link>
                 <Link to="/education" className="nav-link" activeClassName="active">
                     Education
                 </Link>
-
             </nav>
             <div className="content">
                 {education.map((item) => (
                     <div className="education-card" key={item.id}>
-                        <div className="education-header" onClick={() => toggleCard(item.id)}>
+                        <div className="education-header" onClick={() => toggleCard(item.id, hasDetails(item))}>
                             <h2>{item.degree}</h2>
                             <p>{item.university}</p>
                             <p>{item.period}</p>
-                            {expandedId === item.id ? (
-                                <FaAngleUp className="expand-icon" />
-                            ) : (
-                                <FaAngleDown className="expand-icon" />
+                            {hasDetails(item) && (
+                                expandedId === item.id ? (
+                                    <FaAngleUp className="expand-icon" />
+                                ) : (
+                                    <FaAngleDown className="expand-icon" />
+                                )
                             )}
                         </div>
-                        {expandedId === item.id && (
+                        {expandedId === item.id && hasDetails(item) && (
                             <div className="education-description">
                                 {item.bulletPoints.length > 0 && (
                                     <ul>
@@ -93,7 +94,7 @@ const EducationPage = () => {
                                         ))}
                                     </ul>
                                 )}
-                                {item.id === 4 && item.examSubjects.length > 0 && (
+                                {item.examSubjects && item.examSubjects.length > 0 && (
                                     <>
                                         <p>Exam Subjects:</p>
                                         <ul>
