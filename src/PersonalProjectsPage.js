@@ -8,7 +8,7 @@ const projects = [
         id: 1,
         title: 'ArtVista App',
         bulletPoints: [
-            'Founder of Artvista, a startup app designed for art enthusiasts, offering innovative features for art exploration',
+            'Co-founder of Artvista, a startup app designed for art enthusiasts, offering innovative features for art exploration',
             'Scan artworks to instantly access detailed information, including artist biographies, artistic styles, and museum locations',
             'Interactive guide answering questions about techniques, historical context, and significance of the artwork',
             'Includes a comprehensive map of all museums in the Netherlands with details on famous artists and notable artworks',
