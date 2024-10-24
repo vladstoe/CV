@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Use NavLink instead of Link
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import './EducationPage.css';
 
@@ -8,14 +8,14 @@ const education = [
         id: 1,
         university: 'Eindhoven University of Technology',
         degree: 'Computer Science and Engineering Bachelor\'s Degree',
-        period: '2019-2023',
+        period: '2019 - 2023',
         bulletPoints: [],
     },
     {
         id: 2,
         university: '"George Cosbuc" Bilingual National College',
         degree: 'Financial Education',
-        period: '04/2018-05/2018',
+        period: 'April 2018 - May 2018',
         bulletPoints: [
             'Discussions about the non-banking financial market.',
             'Interactive learning about money management and budgeting.',
@@ -25,7 +25,7 @@ const education = [
         id: 3,
         university: '"George Cosbuc" Bilingual National College',
         degree: 'Personal Development Workshop',
-        period: '12/2017-02/2018',
+        period: 'December 2017 - February 2018',
         bulletPoints: [
             'Analyzing the strengths and weaknesses of each participant.',
             'Discussing Conflict Management.',
@@ -36,7 +36,7 @@ const education = [
         id: 4,
         university: '"George Cosbuc" Bilingual National College',
         degree: 'Romania Diploma de Bacalaureat',
-        period: '09/2015-07/2019',
+        period: 'September 2015 - July 2019',
         bulletPoints: [],
         examSubjects: [
             'Romanian Language and Literature.',
@@ -60,15 +60,15 @@ const EducationPage = () => {
     return (
         <div className="education-page">
             <nav className="navigation">
-                <Link to="/personal" className="nav-link" activeClassName="active">
+                <NavLink to="/personal" className="nav-link" activeClassName="active">
                     Personal Projects
-                </Link>
-                <Link to="/projects" className="nav-link" activeClassName="active">
+                </NavLink>
+                <NavLink to="/projects" className="nav-link" activeClassName="active">
                     University Projects
-                </Link>
-                <Link to="/education" className="nav-link" activeClassName="active">
+                </NavLink>
+                <NavLink to="/education" className="nav-link" activeClassName="active">
                     Education
-                </Link>
+                </NavLink>
             </nav>
             <div className="content">
                 {education.map((item) => (

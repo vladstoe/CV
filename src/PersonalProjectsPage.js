@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
-import './PersonalProjectsPage.css';
 
 const projects = [
     {
         id: 1,
         title: 'ArtVista App',
+        subtitle: 'October 2023 - Present',
         bulletPoints: [
             'Co-founder of Artvista, a startup app designed for art enthusiasts, offering innovative features for art exploration',
             'Scan artworks to instantly access detailed information, including artist biographies, artistic styles, and museum locations',
@@ -26,6 +26,7 @@ const projects = [
     {
         id: 2,
         title: 'ArtVista Website',
+        subtitle: 'May 2024 - August 2024',
         bulletPoints: [
             'Developed the official website for Artvista to promote the app and facilitate business inquiries',
             'Front-end built using React, Vite, and TypeScript for a modern, fast, and optimized user experience',
@@ -40,6 +41,7 @@ const projects = [
     {
         id: 3,
         title: 'Trade Talent App',
+        subtitle: 'August 2023',
         bulletPoints: [
             'First project created for a client, dedicated to the creation of a dynamic application where users connect based on their chosen talents and skills. The app also seamlessly integrated a user-friendly chat platform, enabling meaningful interactions among its users',
             'The app was developed in Java for Android with functionalities developed with the help of Firebase',
@@ -53,6 +55,7 @@ const projects = [
     {
         id: 4,
         title: 'CV Website',
+        subtitle: 'July 2023 - Present',
         bulletPoints: [
             "Created this dynamic website using React (JavaScript), focusing on delivering a comprehensive overview of my personal information and accomplishments, with a primary emphasis on the frontend experience and design, without implementing any backend functionalities"
         ],
@@ -92,21 +95,22 @@ const PersonalProjectsPage = () => {
     return (
         <div className="projects-page">
             <nav className="navigation">
-                <Link to="/personal" className="nav-link" activeClassName="active">
+                <NavLink to="/personal" className="nav-link" activeClassName="active">
                     Personal Projects
-                </Link>
-                <Link to="/projects" className="nav-link" activeClassName="active" end>
+                </NavLink>
+                <NavLink to="/projects" className="nav-link" activeClassName="active">
                     University Projects
-                </Link>
-                <Link to="/education" className="nav-link" activeClassName="active">
+                </NavLink>
+                <NavLink to="/education" className="nav-link" activeClassName="active">
                     Education
-                </Link>
+                </NavLink>
             </nav>
             <div className="content">
                 {projects.map((project) => (
                     <div className={`project-card ${isExpanded(project.id) ? 'expanded' : ''}`} key={project.id} onClick={() => toggleCard(project.id, project.iframeUrl)}>
                         <div className="project-header">
                             <h2>{project.title}</h2>
+                            {project.subtitle && <h3 className="project-subtitle">{project.subtitle}</h3>}
                             <p>{project.description}</p>
                         </div>
                         <ul>

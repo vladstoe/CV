@@ -11,17 +11,45 @@
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease;
     font-size: 18px;
-    /* Increase the font size as desired */
+    position: relative;
+    transition: color 0.3s ease;
+}
 
+/* Add an invisible bottom border initially for the underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: transparent;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect to preview underline */
+.nav-link:hover::after {
+    background-color: rgb(100, 0, 100); /* Underline color */
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Style for the active (selected) link */
+.nav-link.active {
+    color: rgb(100, 0, 100); /* Highlighted color */
+}
+
+/* Active state with animated underline */
+.nav-link.active::after {
+    background-color: rgb(100, 0, 100); /* Underline color for active state */
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .nav-link:hover {
-    color: rgb(100, 0, 100);
-}
-
-.nav-link:active {
     color: rgb(100, 0, 100);
 }
 
@@ -32,7 +60,7 @@
 
 
 .education-card {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #f5f7fa, #cfc3e2);
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
@@ -57,7 +85,24 @@
     transform: translateY(-5px);
 }
 
-.education-description ul {
-    margin-left: 20px;
-    /* Adjust the margin as needed */
+.education-description ul li::before {
+    content: '';
+    background-color: #8e44ad;
+    /* Purple shade */
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.education-description ul li {
+    font-size: 16px;
+    /* Same font size as before */
+    color: #2d3436;
+    /* Same color as previous bullet points */
+    margin-bottom: 8px;
+    /* Adjust margin as needed */
+    display: flex;
+    align-items: center;
 }
