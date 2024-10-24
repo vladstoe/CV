@@ -6,41 +6,55 @@ import './PersonalProjectsPage.css';
 const projects = [
     {
         id: 1,
-        title: 'React Native app',
+        title: 'ArtVista App',
         bulletPoints: [
-            "Developed an application using React Native (JavaScript) for the frontend and Firebase for the backend, enabling the creation of a versatile web and Android application. This app's primary focus lies in offering a user-friendly simulated betting experience",
-            "Employed Firebase's powerful capabilities, including email/password authentication and Firestore database integration, to craft a robust foundation for the app. This facilitated the management of essential user data, underpinning the core logic of the application",
-            "Firestore served as the repository for critical data, encompassing users' usernames, their available funds, and their response status regarding the question. It also stored aggregated information, including the total funds amassed for each answer option and the identifiers of users who selected each choice. Additionally, Firestore housed the question itself along with its two available options. To circumvent the need for Firebase's paid Functions feature, a clever 'reset' field was employed, ensuring seamless functionality without incurring additional costs"],
-        iframeUrl: 'https://qandmoney.netlify.app/',
-
+            'Founder of Artvista, a startup app designed for art enthusiasts, offering innovative features for art exploration',
+            'Scan artworks to instantly access detailed information, including artist biographies, artistic styles, and museum locations',
+            'Interactive guide answering questions about techniques, historical context, and significance of the artwork',
+            'Includes a comprehensive map of all museums in the Netherlands with details on famous artists and notable artworks',
+            'Front-end developed using React Native (TypeScript) with custom modules for optimized mobile performance',
+            'Back-end powered by Firebase to manage user data, such as previously scanned and favorited artworks',
+            'Image processing powered by Python, utilizing PyTorch, OpenCV, Hugging Face, YOLO, and TensorFlow, using CNNs and Transformers for generating and analyzing image vectors',
+            'Deployed using Docker with Docker Compose and Kubernetes for scalable container management',
+            'Database architecture built using PostgreSQL with pgvector for handling image vectors',
+            'Integrated OpenAI and Langchain for our Art Guide',
+            'iOS: https://apps.apple.com/nl/app/artvista-art-companion/id6503986684?l=en-GB',
+            'Android: https://play.google.com/store/apps/details?id=com.artvista&hl=en'
+        ],
+        iframeUrl: '',
     },
     {
         id: 2,
-        title: 'Android Studio app',
+        title: 'ArtVista Website',
         bulletPoints: [
-            'First project created for a client, dedicated to the creation of a dynamic application where users connect based on their chosen talents and skills. The app also seamlessly integrated a user-friendly chat platform, enabling meaningful interactions among its users',
-            'Technologies used consist of Android Studio (Java) for frontend and Firebase for backend',
-            "Implemented a suite of Firebase functionalities, including email/password authentication, Firestore for data management driving the app's logic, and Storage for preserving user profile pictures",
-            "Firestore served as the foundational repository for critical data elements, including user profiles encompassing usernames and their desired learning and teaching skills. Additionally, it managed chat-related information, housing details about chat room participants, message transcripts, and comprehensive message attributes such as timestamps, sender IDs, and message content",
-            "Android apk link: https://www.upload-apk.com/mE6ZxGx7AO0Ah0G"
-
-
-
+            'Developed the official website for Artvista to promote the app and facilitate business inquiries',
+            'Front-end built using React, Vite, and TypeScript for a modern, fast, and optimized user experience',
+            'Back-end integrated with the same API as the app',
+            'Tailored API endpoints to specifically handle artwork detection and processing for the provided playground on the website',
+            'Seamless integration with PostgreSQL and the same image processing algorithms for a unified backend across the website and mobile app',
+            'Website: https://artvista.app'
         ],
-        iframeUrl: 'https://www.youtube.com/embed/uXgTkaQn004',
-
+        iframeUrl: '',
     },
 
     {
         id: 3,
-        title: 'This React website',
+        title: 'Trade Talent App',
         bulletPoints: [
-            "Created a dynamic website using React (JavaScript) for the frontend, focusing on delivering a comprehensive overview of my personal information and accomplishments, with a primary emphasis on the frontend experience and design, without implementing any backend functionalities"
+            'First project created for a client, dedicated to the creation of a dynamic application where users connect based on their chosen talents and skills. The app also seamlessly integrated a user-friendly chat platform, enabling meaningful interactions among its users',
+            'The app was developed in Java for Android with functionalities developed with the help of Firebase',
+            "Implemented a suite of Firebase functionalities, including email/password authentication, Firestore for data management driving the app's logic, and Storage for preserving the user's profile picture",
+            "Firestore served as the foundational repository for critical data elements, including user profiles encompassing usernames and their desired learning and teaching skills. Additionally, it managed chat-related information, housing details about chat room participants, message transcripts, and comprehensive message attributes such as timestamps, sender IDs, and message content",
+            "Android apk link: https://www.upload-apk.com/mE6ZxGx7AO0Ah0G"
+        ],
+        iframeUrl: 'https://www.youtube.com/embed/uXgTkaQn004',
 
-
-
-
-
+    },
+    {
+        id: 4,
+        title: 'CV Website',
+        bulletPoints: [
+            "Created this dynamic website using React (JavaScript), focusing on delivering a comprehensive overview of my personal information and accomplishments, with a primary emphasis on the frontend experience and design, without implementing any backend functionalities"
         ],
         iframeUrl: '',
 
@@ -57,6 +71,22 @@ const PersonalProjectsPage = () => {
 
     const isExpanded = (id) => {
         return expandedId === id;
+    };
+
+    // Function to make URLs clickable in bullet points
+    const makeLinksClickable = (text) => {
+        const urlRegex = /(https?:\/\/[^\s]+)/g; // Regex to detect URLs
+        const parts = text.split(urlRegex);
+
+        return parts.map((part, index) =>
+            urlRegex.test(part) ? (
+                <a key={index} href={part} target="_blank" rel="noopener noreferrer">
+                    {part}
+                </a>
+            ) : (
+                part
+            )
+        );
     };
 
     return (
@@ -81,7 +111,7 @@ const PersonalProjectsPage = () => {
                         </div>
                         <ul>
                             {project.bulletPoints.map((point, index) => (
-                                <li key={index}>{point}</li>
+                                <li key={index}>{makeLinksClickable(point)}</li>
                             ))}
                         </ul>
                         {project.iframeUrl && (

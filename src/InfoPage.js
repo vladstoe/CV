@@ -54,7 +54,7 @@ const InfoPage = () => {
               </li>
               <li>
                 <i className="fa fa-envelope contact-icon"></i>
-                <span className="contact-info">22 years old</span>
+                <span className="contact-info">24 years old</span>
               </li>
               <li onClick={handleWhatsAppClick} style={{ cursor: 'pointer' }}>
                 <i className="fa fa-phone contact-icon"></i>

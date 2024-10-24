@@ -73,3 +73,42 @@
   background-color: rgb(100, 0, 100);
   /* Show scrollbar thumb on hover */
 }
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .left-section,
+  .right-section {
+    flex: none;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .video-background {
+    position: fixed;
+    /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover;
+    /* Ensures the video covers the entire container */
+    background-size: cover;
+  }
+
+  /* Adjust scrollbar visibility on mobile */
+  .right-section::-webkit-scrollbar {
+    display: none;
+  }
+
+  .right-section {
+    scrollbar-width: none;
+  }
+}

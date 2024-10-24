@@ -1,6 +1,6 @@
 .projects-page {
     padding-bottom: 20px;
-    background:transparent;
+    background: transparent;
 }
 
 .projects-page h1 {
@@ -42,6 +42,19 @@
     font-size: 18px;
     margin-bottom: 10px;
     color: black;
+}
+
+.project-card ul li {
+    margin-left: 20px;
+    /* Add padding to the top and bottom of each bullet point */
+    margin-bottom: 10px;
+}
+
+
+.expand-icon {
+    cursor: pointer;
+    margin-left: -6px;
+    font-size: 24px;
 }
 
 .iframe-container {

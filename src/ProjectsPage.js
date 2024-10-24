@@ -6,6 +6,18 @@ import './ProjectsPage.css';
 const projects = [
     {
         id: 1,
+        title: 'Cyclopedium - TU/e',
+        bulletPoints: [
+            'Developed Cyclopedium, an online web-application for creating dynamic and interactive documentation for software projects',
+            'Implemented real-time code modification and rendering using Docker containers to enhance developer productivity',
+            'Levereged Cypress functionalities in order to reload the Docker environment to properly update the UI with the code modified within the code snippets',
+            'Integrated a custom Sphinx directive for code embedding and real-time viewing of results in the documentation',
+            'All of the scripts involved were written and developed in Python'
+        ],
+        iframeUrl: 'https://www.youtube.com/embed/_Zffa5jrryA',
+    },
+    {
+        id: 2,
         title: 'Security Software Development - TU/e',
         bulletPoints: [
             'Implementing a fully-fledged spoofing tool for ARP and DNS using Scapy, based on Ettercap’s implementation of the two attacks (ARP and DNS spoofing), which uses MITM attack, during which the attacker positions themselves between the communication of two parties, either listening to the communication or interfering with the packets sent or received by both sides',
@@ -15,7 +27,7 @@ const projects = [
 
     },
     {
-        id: 2,
+        id: 3,
         title: 'App development - TU/e',
         bulletPoints: [
             'Developed Quizy, an entertainment Android app that allows users to create questions and take quizzes on any topic',
@@ -29,7 +41,7 @@ const projects = [
     },
     // Add more projects with bullet points
     {
-        id: 3,
+        id: 4,
         title: 'Web technologies - TU/e',
         bulletPoints: [
             ' Developed a Python-based web tool to simplify eye-tracking data analysis and enhance data visualization',
