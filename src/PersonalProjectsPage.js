@@ -18,8 +18,7 @@ const projects = [
             'Deployed using Docker with Docker Compose and Kubernetes for scalable container management',
             'Database architecture built using PostgreSQL with pgvector for handling image vectors',
             'Integrated OpenAI and Langchain for our Art Guide',
-            'iOS: https://apps.apple.com/nl/app/artvista-art-companion/id6503986684?l=en-GB',
-            'Android: https://play.google.com/store/apps/details?id=com.artvista&hl=en'
+            'Available on:&nbsp;<a href="https://apps.apple.com/nl/app/artvista-art-companion/id6503986684?l=en-GB" target="_blank" rel="noopener noreferrer">iOS</a>&nbsp;and&nbsp;<a href="https://play.google.com/store/apps/details?id=com.artvista&hl=en" target="_blank" rel="noopener noreferrer">Android</a>'
         ],
         iframeUrl: '',
     },
@@ -33,7 +32,7 @@ const projects = [
             'Back-end integrated with the same API as the app',
             'Tailored API endpoints to specifically handle artwork detection and processing for the provided playground on the website',
             'Seamless integration with PostgreSQL and the same image processing algorithms for a unified backend across the website and mobile app',
-            'Website: https://artvista.app'
+            '<a href="https://artvista.app" target="_blank" rel="noopener noreferrer">Website</a>'
         ],
         iframeUrl: '',
     },
@@ -47,7 +46,7 @@ const projects = [
             'The app was developed in Java for Android with functionalities developed with the help of Firebase',
             "Implemented a suite of Firebase functionalities, including email/password authentication, Firestore for data management driving the app's logic, and Storage for preserving the user's profile picture",
             "Firestore served as the foundational repository for critical data elements, including user profiles encompassing usernames and their desired learning and teaching skills. Additionally, it managed chat-related information, housing details about chat room participants, message transcripts, and comprehensive message attributes such as timestamps, sender IDs, and message content",
-            "Android apk link: https://www.upload-apk.com/mE6ZxGx7AO0Ah0G"
+            '<a href="https://www.upload-apk.com/mE6ZxGx7AO0Ah0G" target="_blank" rel="noopener noreferrer">Download APK</a>'
         ],
         iframeUrl: 'https://www.youtube.com/embed/uXgTkaQn004',
 
@@ -76,22 +75,6 @@ const PersonalProjectsPage = () => {
         return expandedId === id;
     };
 
-    // Function to make URLs clickable in bullet points
-    const makeLinksClickable = (text) => {
-        const urlRegex = /(https?:\/\/[^\s]+)/g; // Regex to detect URLs
-        const parts = text.split(urlRegex);
-
-        return parts.map((part, index) =>
-            urlRegex.test(part) ? (
-                <a key={index} href={part} target="_blank" rel="noopener noreferrer">
-                    {part}
-                </a>
-            ) : (
-                part
-            )
-        );
-    };
-
     return (
         <div className="projects-page">
             <nav className="navigation">
@@ -115,7 +98,7 @@ const PersonalProjectsPage = () => {
                         </div>
                         <ul>
                             {project.bulletPoints.map((point, index) => (
-                                <li key={index}> {makeLinksClickable(point)}</li>
+                                <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
                             ))}
                         </ul>
                         {project.iframeUrl && (
