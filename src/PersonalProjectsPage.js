@@ -115,7 +115,7 @@ const PersonalProjectsPage = () => {
                         </div>
                         <ul>
                             {project.bulletPoints.map((point, index) => (
-                                <li key={index}>{makeLinksClickable(point)}</li>
+                                <li key={index}> {makeLinksClickable(point)}</li>
                             ))}
                         </ul>
                         {project.iframeUrl && (
