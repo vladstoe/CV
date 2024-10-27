@@ -31,7 +31,7 @@ const projects = [
     {
         id: 3,
         title: 'App development - TU/e',
-        subtitle: 'January 2020 - April 2020',
+        subtitle: 'January 2021 - April 2021',
         bulletPoints: [
             'Developed Quizy, an entertainment Android app that allows users to create questions and take quizzes on any topic',
             'Created the user interface (UI) design for Quizy app using Android Studio\'s built-in layout editor',
