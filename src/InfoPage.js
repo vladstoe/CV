@@ -86,8 +86,19 @@ const InfoPage = () => {
         <h2 className="section-title">About Me</h2>
         <div className="section-content">
           <p>
-            I am a motivated Computer Science student from Romania with a passion for technology and a desire to make a difference. Currently pursuing my Master's degree in Computer Science, I have gained a solid understanding of programming languages, algorithms, and software development principles through my Bachelor's studies in the same field. My coursework has equipped me with strong problem-solving skills and the ability to approach challenges with a logical mindset in security, and data analysis. I am seeking entry-level roles where I can make a meaningful impact while expanding my skill set. With a strong passion for software development, I am ready to contribute to the ever-evolving field of technology.
+            I'm a Computer Science graduate located in Eindhoven, Netherlands with a deep passion for technology and a drive to make a real impact. Currently, I'm pursuing a Master's degree in Computer Science as well and have built a strong foundation in programming, algorithms, and software development through my Bachelor's studies. My journey so far has equipped me with problem-solving skills and a logical approach to challenges, especially in areas like security and data analysis. I'm on the lookout for entry-level roles where I can learn, grow, and contribute meaningfully to a team while continuing to expand my skills. With an enthusiasm for software development, I’m excited to bring fresh ideas and energy to the world of tech.
           </p>
+        </div>
+        <div className="skills-section">
+          <h2 className="section-title">Skills</h2>
+          <div className="skills-content">
+            {[
+              'TypeScript', 'JavaScript', 'CSS', 'HTML', 'React', 'React Native',
+              'Java', 'Python', 'Node.js', 'Firebase', 'C++', 'Docker', 'Vite'
+            ].map((skill, index) => (
+              <span key={index} className="skill-bubble">{skill}</span>
+            ))}
+          </div>
         </div>
         <div className="profile-social">
           <a href="https://github.com/vladstoe" target="_blank" rel="noopener noreferrer">
@@ -97,6 +108,7 @@ const InfoPage = () => {
             <FontAwesomeIcon icon={faLinkedin} className="social-icon linkedin-icon" />
           </a>
         </div>
+
       </div>
       {showFlag && (
         <div className={`romanian-flag ${showFlag ? 'flag-visible' : ''}`}>
