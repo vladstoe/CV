@@ -8,7 +8,7 @@ import PersonalProjectsPage from './PersonalProjectsPage';
 
 const App = () => {
   useEffect(() => {
-    document.title = "Vlad's CV"; // Set your universal tab title here
+    document.title = "Vlad Stoenescu"; // Set your universal tab title here
   }, []);
 
   return (
