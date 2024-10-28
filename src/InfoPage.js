@@ -137,8 +137,8 @@ const InfoPage = () => {
         <h2 className="section-title">About Me</h2>
         <div className="section-content">
           <p>
-            I'm a Computer Science graduate located in Eindhoven, Netherlands with a deep passion for technology and a drive to make a real impact. Currently, I'm pursuing a Master's degree in Computer Science as well and have built a strong foundation in programming, algorithms, and software development through my Bachelor's studies. My journey so far has equipped me with problem-solving skills and a logical approach to challenges, especially in areas like security and data analysis. I'm on the lookout for entry-level roles where I can learn, grow, and contribute meaningfully to a team while continuing to expand my skills. With an enthusiasm for software development, I’m excited to bring fresh ideas and energy to the world of tech.
-          </p>
+          I'm a Computer Science graduate based in Eindhoven, Netherlands. Currently, I’m pursuing a Master’s in Computer Science and have developed a solid background in programming, algorithms, and software development through my Bachelor’s studies. Along the way, I’ve built strong problem-solving skills, especially in security and data analysis. I’m looking for entry-level roles where I can contribute, learn, and grow as I build my skills further in software development.
+</p>
         </div>
         <div className="skills-section">
           <h2 className="section-title">Skills</h2>
