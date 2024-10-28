@@ -32,25 +32,28 @@
 
 /* Hover effect to preview underline */
 .nav-link:hover::after {
-    background-color: rgb(100, 0, 100); /* Underline color */
+    background-color: #5d3a9b;
+    /* Underline color */
     transform: scaleX(1);
     transform-origin: left;
 }
 
 /* Style for the active (selected) link */
 .nav-link.active {
-    color: rgb(100, 0, 100); /* Highlighted color */
+    color: #5d3a9b;
+    /* Highlighted color */
 }
 
 /* Active state with animated underline */
 .nav-link.active::after {
-    background-color: rgb(100, 0, 100); /* Underline color for active state */
+    background-color: #5d3a9b;
+    /* Underline color for active state */
     transform: scaleX(1);
     transform-origin: left;
 }
 
 .nav-link:hover {
-    color: rgb(100, 0, 100);
+    color: #5d3a9b;
 }
 
 .content {
@@ -87,7 +90,7 @@
 
 .education-description ul li::before {
     content: '';
-    background-color: #8e44ad;
+    background-color: #5d3a9b;
     /* Purple shade */
     height: 6px;
     width: 6px;

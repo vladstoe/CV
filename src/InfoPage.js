@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './InfoPage.css';
@@ -8,6 +8,47 @@ const InfoPage = () => {
   const maxClicksToShowFlag = 5; // Change this to set the number of clicks required
   const [showFlag, setShowFlag] = useState(false);
   const [remainingClicks, setRemainingClicks] = useState(maxClicksToShowFlag);
+  const skillBubblesRef = useRef([]);
+
+  const animationIndex = useRef(0); // Track which bubble is currently animated
+
+  useEffect(() => {
+    const bubbles = skillBubblesRef.current;
+    let interval;
+
+    // Function to start the sequential animation
+    const startAnimation = () => {
+      interval = setInterval(() => {
+        // Remove the active class from the previous bubble
+        bubbles.forEach((bubble) => bubble.classList.remove('active'));
+
+        // Add the active class to the current bubble
+        bubbles[animationIndex.current].classList.add('active');
+
+        // Increment the animation index or reset it if we've reached the end
+        animationIndex.current = (animationIndex.current + 1) % bubbles.length;
+      }, 2000); // Adjust time between animations
+    };
+
+    // Start the animation
+    startAnimation();
+
+    // Pause the animation on hover
+    bubbles.forEach((bubble) => {
+      bubble.addEventListener('mouseover', () => clearInterval(interval));
+      bubble.addEventListener('mouseleave', startAnimation);
+    });
+
+    // Cleanup event listeners and interval on component unmount
+    return () => {
+      clearInterval(interval);
+      bubbles.forEach((bubble) => {
+        bubble.removeEventListener('mouseover', () => { });
+        bubble.removeEventListener('mouseleave', startAnimation);
+      });
+    };
+  }, []);
+
 
   const handleEmailClick = () => {
     window.location.href = 'mailto:vladmstoenescu6@gmail.com';
@@ -45,7 +86,17 @@ const InfoPage = () => {
           <img src="https://i.ibb.co/NYRX5jn/Whats-App-Image-2023-09-03-at-17-35-20-2.jpg" alt="Profile" />
         </div>
         <div className="profile-details">
-          <p className="profile-name">Vlad Stoenescu</p>
+          <div className="profile-name">
+            Vlad Stoenescu
+            <div className="profile-social">
+              <a href="https://github.com/vladstoe" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} className="social-icon github-icon" />
+              </a>
+              <a href="https://www.linkedin.com/in/vlad-stoenescu-4a854020a/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} className="social-icon linkedin-icon" />
+              </a>
+            </div>
+          </div>
           <div className="contact-section">
             <ul className="contact-list">
               <li onClick={handleRomanianClick} onMouseLeave={resetClickCounter} style={{ cursor: 'pointer' }}>
@@ -96,17 +147,14 @@ const InfoPage = () => {
               'TypeScript', 'JavaScript', 'CSS', 'HTML', 'React', 'React Native',
               'Java', 'Python', 'Node.js', 'Firebase', 'C++', 'Docker', 'Vite'
             ].map((skill, index) => (
-              <span key={index} className="skill-bubble">{skill}</span>
+              <span
+                key={index}
+                className="skill-bubble"
+                ref={el => skillBubblesRef.current[index] = el}>
+                {skill}
+              </span>
             ))}
           </div>
-        </div>
-        <div className="profile-social">
-          <a href="https://github.com/vladstoe" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faGithub} className="social-icon github-icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/vlad-stoenescu-4a854020a/" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faLinkedin} className="social-icon linkedin-icon" />
-          </a>
         </div>
 
       </div>

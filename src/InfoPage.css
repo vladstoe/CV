@@ -66,12 +66,39 @@
     margin-bottom: -20px;
 }
 
-.profile-picture img {
+.profile-picture {
+    display: flex;
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
     width: 150px;
+    /* Match image width */
     height: 150px;
+    /* Match image height */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+
+.profile-name {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Adjust spacing between name and icons */
+}
+
+.profile-social {
+    display: flex;
 }
 
 .profile-details {
@@ -131,11 +158,25 @@
 }
 
 .github-icon {
+    color: #5d3a9b;
+    /* GitHub's official color */
+    transition: color 0.3s ease;
+}
+
+.github-icon:hover {
     color: white;
+    /* Darker shade on hover */
 }
 
 .linkedin-icon {
-    color: #0A66C2;
+    color: #5d3a9b;
+    /* LinkedIn's official color */
+    transition: color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+    color: #004182;
+    /* Darker shade on hover */
 }
 
 .nationality {
@@ -208,12 +249,45 @@
     /* Initially transparent */
 }
 
+@keyframes scaleOnce {
+
+    0%,
+    25% {
+        transform: scale(1);
+        /* Start at normal size */
+        border-color: transparent;
+    }
+
+    50%,
+    75% {
+        transform: scale(1.1);
+        /* Hold the scale of 1.1 */
+        border-color: white;
+        /* White border while scaled up */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Return to normal size */
+        border-color: transparent;
+    }
+}
+
+.skill-bubble {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    /* Smooth transition for both */
+    border: 2px solid transparent;
+}
+
+.skill-bubble.active {
+    animation: scaleOnce 2s ease-in-out;
+}
+
 .skill-bubble:hover {
+    animation-play-state: paused;
     transform: scale(1.1);
     background-color: #0056b3;
-    /* Darken background slightly on hover */
     border: 2px solid #ffffff;
-    /* White border on hover */
 }
 
 .skill-bubble:nth-child(1) {
@@ -229,7 +303,7 @@
 }
 
 .skill-bubble:nth-child(4) {
-    background-color: #8e44ad;
+    background-color: #5d3a9b;
 }
 
 .skill-bubble:nth-child(5) {
@@ -294,9 +368,4 @@
 
 .skill-bubble:nth-child(20) {
     background-color: #34495e;
-}
-
-
-.profile-social {
-    margin-top: 10px;
 }
