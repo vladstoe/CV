@@ -53,7 +53,7 @@ const projects = [
     },
     {
         id: 4,
-        title: 'CV Website',
+        title: 'Portfolio Website',
         subtitle: 'July 2023 - Present',
         bulletPoints: [
             "Created this dynamic website using React (JavaScript), focusing on delivering a comprehensive overview of my personal information and accomplishments, with a primary emphasis on the frontend experience and design, without implementing any backend functionalities"
