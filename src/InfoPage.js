@@ -137,15 +137,15 @@ const InfoPage = () => {
         <h2 className="section-title">About Me</h2>
         <div className="section-content">
           <p>
-          I'm a Computer Science graduate based in Eindhoven, Netherlands. Currently, I’m pursuing a Master’s in Computer Science and have developed a solid background in programming, algorithms, and software development through my Bachelor’s studies. Along the way, I’ve built strong problem-solving skills, especially in security and data analysis. I’m looking for entry-level roles where I can contribute, learn, and grow as I build my skills further in software development.
-</p>
+            I'm a Computer Science graduate based in Eindhoven, Netherlands. Currently, I’m pursuing a Master’s in Computer Science and have developed a solid background in programming, algorithms, and software development through my Bachelor’s studies. Along the way, I’ve built strong problem-solving skills, especially in security and data analysis. I’m looking for entry-level roles where I can contribute, learn, and grow as I build my skills further in software development.
+          </p>
         </div>
         <div className="skills-section">
           <h2 className="section-title">Skills</h2>
           <div className="skills-content">
             {[
               'TypeScript', 'JavaScript', 'CSS', 'HTML', 'React', 'React Native',
-              'Java', 'Python', 'Node.js', 'Firebase', 'C++', 'Docker', 'Vite'
+              'Java', 'Python', 'Node.js', 'Firebase', 'C++', 'Docker', 'Vite', 'Linux'
             ].map((skill, index) => (
               <span
                 key={index}
