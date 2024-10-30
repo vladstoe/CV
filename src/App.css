@@ -74,7 +74,7 @@
   /* Show scrollbar thumb on hover */
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .app {
     flex-direction: column;
     padding: 0;

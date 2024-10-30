@@ -369,3 +369,26 @@
 .skill-bubble:nth-child(20) {
     background-color: #34495e;
 }
+
+@media (max-width: 768px) {
+
+    /* Reduce the size of the profile picture and adjust layout for smaller screens */
+    .profile-section {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        /* Allow items to wrap to prevent overflow */
+        width: 100%;
+        /* Set full width */
+        justify-content: center;
+        /* Center content horizontally */
+        /* Add padding for better spacing */
+    }
+
+
+    .profile-name {
+        font-size: 28px;
+        /* Reduce font size to fit smaller screens */
+    }
+
+}
