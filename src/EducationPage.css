@@ -88,17 +88,6 @@
     transform: translateY(-5px);
 }
 
-.education-description ul li::before {
-    content: '';
-    background-color: #5d3a9b;
-    /* Purple shade */
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
 .education-description ul li {
     font-size: 16px;
     /* Same font size as before */
@@ -106,6 +95,13 @@
     /* Same color as previous bullet points */
     margin-bottom: 8px;
     /* Adjust margin as needed */
-    display: flex;
     align-items: center;
+    margin-left: 20px;
+}
+
+.education-description ul li::marker {
+    color: #5d3a9b;
+    /* Set to purple */
+    font-weight: bold;
+    /* Optional: make the dots a bit more prominent */
 }

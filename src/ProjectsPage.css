@@ -48,19 +48,18 @@
     color: #2d3436;
     margin-left: 20px;
     margin-bottom: 12px;
-    display: inline-flex;
     /* Use inline-flex to align bullet at the start of text */
     align-items: flex-start;
 }
 
-.project-card ul li::before {
-    content: '•';
+.project-card ul li::marker {
     color: #5d3a9b;
-    font-size: 24px;
-    margin-right: 10px;
-    line-height: 0.9;
-    /* Ensure bullet aligns vertically with text */
+    /* Set to purple */
+    font-weight: bold;
+    /* Optional: make the dots a bit more prominent */
 }
+
+
 
 .expand-icon {
     cursor: pointer;
