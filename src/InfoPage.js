@@ -81,6 +81,7 @@ const InfoPage = () => {
 
   return (
     <div className="info-page">
+          <div className="section-container">
       <div className="profile-section">
         <div className="profile-picture">
           <img src="https://i.ibb.co/NYRX5jn/Whats-App-Image-2023-09-03-at-17-35-20-2.jpg" alt="Profile" />
@@ -133,6 +134,9 @@ const InfoPage = () => {
           </div>
         </div>
       </div>
+      </div>
+      <div className="section-container">
+
       <div className="info-section">
         <h2 className="section-title">About Me</h2>
         <div className="section-content">
@@ -155,6 +159,7 @@ const InfoPage = () => {
               </span>
             ))}
           </div>
+        </div>
         </div>
 
       </div>
