@@ -20,7 +20,6 @@
 }
 
 .info-page {
-    padding-bottom: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -417,6 +416,10 @@
     .profile-name {
         font-size: 28px;
         /* Reduce font size to fit smaller screens */
+    }
+
+    .info-page {
+        padding: 0px;
     }
 
 }
