@@ -65,6 +65,7 @@
     background-size: 200%;
     font-weight: bold;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: colorWave 4s linear infinite;
     position: relative;
