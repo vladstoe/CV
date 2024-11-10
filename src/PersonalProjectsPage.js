@@ -27,12 +27,13 @@ const projects = [
         title: 'ArtVista Website',
         subtitle: 'May 2024 - August 2024',
         bulletPoints: [
-            'Developed the official website for Artvista to promote the app and facilitate business inquiries',
-            'Front-end built using React, Vite, and TypeScript for a modern, fast, and optimized user experience',
+            'Developed the official and unofficial website for Artvista to promote the app and facilitate business inquiries',
+            'Front-end built using Vue.js for the official version and React, Vite, and TypeScript for the unofficial version for a modern, fast, and optimized user experience',
             'Back-end integrated with the same API as the app',
             'Tailored API endpoints to specifically handle artwork detection and processing for the provided playground on the website',
             'Seamless integration with PostgreSQL and the same image processing algorithms for a unified backend across the website and mobile app',
-            '<a href="https://artvista.app" target="_blank" rel="noopener noreferrer">Website</a>'
+            '<a href="https://artvista.app" target="_blank" rel="noopener noreferrer">Official website</a>',
+            '<a href="https://artvistaunofficial.netlify.app" target="_blank" rel="noopener noreferrer">Unofficial website</a>'
         ],
         iframeUrl: '',
     },

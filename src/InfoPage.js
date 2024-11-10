@@ -149,7 +149,7 @@ const InfoPage = () => {
           <div className="skills-content">
             {[
               'TypeScript', 'JavaScript', 'CSS', 'HTML', 'React', 'React Native',
-              'Java', 'Python', 'Node.js', 'Firebase', 'C++', 'Docker', 'Vite', 'Linux'
+              'Java', 'Python', 'Node.js', 'Firebase', 'C++', 'Docker', 'Vite', 'Vue.js', 'Linux'
             ].map((skill, index) => (
               <span
                 key={index}
