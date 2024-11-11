@@ -24,7 +24,7 @@ const App = () => {
         </div>
         <div className="right-section">
           <Routes>
-            <Route path="/" element={<Navigate to="/projects" />} />
+            <Route path="/" element={<Navigate to="/personal" />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/education" element={<EducationPage />} />
             <Route path="/personal" element={<PersonalProjectsPage />} />

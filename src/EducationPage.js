@@ -60,11 +60,11 @@ const EducationPage = () => {
     return (
         <div className="education-page">
             <nav className="navigation">
-                <NavLink to="/personal" className="nav-link" activeClassName="active">
-                    Personal Projects
-                </NavLink>
                 <NavLink to="/projects" className="nav-link" activeClassName="active">
                     University Projects
+                </NavLink>
+                <NavLink to="/personal" className="nav-link" activeClassName="active">
+                    Personal Projects
                 </NavLink>
                 <NavLink to="/education" className="nav-link" activeClassName="active">
                     Education
