@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import { FaAngleDown, FaAngleUp, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const projects = [
     {
@@ -12,13 +12,22 @@ const projects = [
             'Scan artworks to instantly access detailed information, including artist biographies, artistic styles, and museum locations',
             'Interactive guide answering questions about techniques, historical context, and significance of the artwork',
             'Includes a comprehensive map of all museums in the Netherlands with details on famous artists and notable artworks',
-            'Front-end developed using React Native (TypeScript) with custom modules for optimized mobile performance',
-            'Firebase was used to manage user data, such as previously scanned and favorited artworks',
-            'Back-end handled by our custom API to deal with image processing powered by Python, utilizing PyTorch, OpenCV, Hugging Face, YOLO, and TensorFlow; using CNNs and Transformers for generating and analyzing image vectors',
-            'Deployed using Docker with Docker Compose and Kubernetes for scalable container management',
-            'Database architecture built using PostgreSQL with pgvector for handling image vectors',
-            'Integrated OpenAI and Langchain for our Art Guide',
-            'Available on:&nbsp;<a href="https://apps.apple.com/nl/app/artvista-art-companion/id6503986684?l=en-GB" target="_blank" rel="noopener noreferrer">iOS</a>&nbsp;and&nbsp;<a href="https://play.google.com/store/apps/details?id=com.artvista&hl=en" target="_blank" rel="noopener noreferrer">Android</a>'
+            'Available on:&nbsp;<a href="https://apps.apple.com/nl/app/artvista-art-companion/id6503986684?l=en-GB" target="_blank" rel="noopener noreferrer">iOS</a>&nbsp;and&nbsp;<a href="https://play.google.com/store/apps/details?id=com.artvista&hl=en" target="_blank" rel="noopener noreferrer">Android</a>',
+            '<span class="no-bullet tech-stack-heading">⚙️ <strong>Tech Stack</strong></span>',
+            '<strong>Frontend:</strong> React Native (TypeScript) with custom modules for optimized mobile performance',
+            '<strong>Backend:</strong> Custom API powered by Python, using PyTorch, OpenCV, Hugging Face, YOLO, and TensorFlow (CNNs & Transformers)',
+            '<strong>Database:</strong> PostgreSQL with pgvector for handling image vectors',
+            '<strong>Deployment:</strong> Docker with Docker Compose & Kubernetes for scalable container management',
+            '<strong>AI Integration:</strong> OpenAI & Langchain for the interactive Art Guide',
+            '<strong>User Management:</strong> Firebase for user data like scanned and favorited artworks',
+        ],
+        images: [
+            'WhatsApp Image 2024-09-03 at 23.37.54_c819dfe7.jpg',
+            'WhatsApp Image 2024-09-03 at 23.37.54_c367b2c2.jpg',
+            'WhatsApp Image 2024-09-03 at 23.37.54_12a2feca.jpg',
+            'WhatsApp Image 2024-09-05 at 11.18.25_88115cf9.jpg',
+            'WhatsApp Image 2024-09-05 at 11.18.25_a6917787.jpg',
+
         ],
         iframeUrl: '',
     },
@@ -28,8 +37,8 @@ const projects = [
         subtitle: 'May 2024 - August 2024',
         bulletPoints: [
             'Developed the official and unofficial website for Artvista to promote the app and facilitate business inquiries',
-            'Front-end built using Vue.js for the official version and React, Vite, and TypeScript for the unofficial version for a modern, fast, and optimized user experience',
-            'Back-end integrated with the same API as the app',
+            'Frontend built using Vue.js for the official version and React, Vite, and TypeScript for the unofficial version for a modern, fast, and optimized user experience',
+            'Backend integrated with the same API as the app',
             'Tailored API endpoints to specifically handle artwork detection and processing for the provided playground on the website',
             'Seamless integration with PostgreSQL and the same image processing algorithms for a unified backend across the website and mobile app',
             '<a href="https://artvista.app" target="_blank" rel="noopener noreferrer">Official website</a>',
@@ -37,9 +46,23 @@ const projects = [
         ],
         iframeUrl: '',
     },
-
     {
         id: 3,
+        title: 'ArtVista Portal',
+        subtitle: 'November 2024 - Present',
+        bulletPoints: [
+            'Developing a comprehensive portal for ArtVista, designed to allow artists and museums to upload, manage, and organize their artworks and inventory efficiently',
+            'The portal extends ArtVista\'s core functionality by enabling museums and artists to make their artworks scannable through the ArtVista app, enhancing accessibility and engagement',
+            'Built using Next.js for the frontend',
+            'Backend integrated with the same API as the app',
+            'Implements authentication and secure data management to facilitate safe user access for artists and institutions',
+            '<a href="https://portal.artvista.app" target="_blank" rel="noopener noreferrer">Check it out here</a>',
+        ],
+        iframeUrl: '',
+    },
+
+    {
+        id: 4,
         title: 'Trade Talent App',
         subtitle: 'August 2023',
         bulletPoints: [
@@ -53,7 +76,7 @@ const projects = [
 
     },
     {
-        id: 4,
+        id: 5,
         title: 'Portfolio Website',
         subtitle: 'July 2023 - Present',
         bulletPoints: [
@@ -67,6 +90,9 @@ const projects = [
 
 const PersonalProjectsPage = () => {
     const [expandedId, setExpandedId] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [currentProjectImages, setCurrentProjectImages] = useState([]);
 
     const toggleCard = (id) => {
         setExpandedId((prevId) => (prevId === id ? null : id));
@@ -75,6 +101,31 @@ const PersonalProjectsPage = () => {
     const isExpanded = (id) => {
         return expandedId === id;
     };
+
+    const openImageModal = (images, index) => {
+        setCurrentProjectImages(images);
+        setSelectedImageIndex(index);
+        setIsModalOpen(true);
+        document.body.style.overflow = 'hidden'; // Disable background scroll
+    };
+
+    const closeImageModal = () => {
+        setIsModalOpen(false);
+        document.body.style.overflow = 'auto';
+    };
+
+    const nextImage = () => {
+        setSelectedImageIndex((prevIndex) =>
+            prevIndex === currentProjectImages.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const prevImage = () => {
+        setSelectedImageIndex((prevIndex) =>
+            prevIndex === 0 ? currentProjectImages.length - 1 : prevIndex - 1
+        );
+    };
+
 
     return (
         <div className="projects-page">
@@ -99,7 +150,11 @@ const PersonalProjectsPage = () => {
                         </div>
                         <ul>
                             {project.bulletPoints.map((point, index) => (
-                                <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
+                                point.includes('no-bullet') ? (
+                                    <div key={index} dangerouslySetInnerHTML={{ __html: point }} />
+                                ) : (
+                                    <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
+                                )
                             ))}
                         </ul>
                         {project.iframeUrl && (
@@ -119,6 +174,64 @@ const PersonalProjectsPage = () => {
                                 </div>
                             </div>
                         )}
+                        {project.images && project.images.length > 0 && (
+                            <div className="project-images-container">
+                                <button
+                                    className="scroll-button left"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        document
+                                            .getElementById(`scroll-container-${project.id}`)
+                                            .scrollBy({ left: -300, behavior: 'smooth' });
+                                    }}
+                                >
+                                    &#8249;
+                                </button>
+                                <div className="project-images-scroll" id={`scroll-container-${project.id}`}>
+                                    {project.images.map((image, index) => (
+                                        <img
+                                            key={index}
+                                            src={image}
+                                            alt={`${project.title} screenshot ${index + 1}`}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                openImageModal(project.images, index);
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                                <button
+                                    className="scroll-button right"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        document
+                                            .getElementById(`scroll-container-${project.id}`)
+                                            .scrollBy({ left: 300, behavior: 'smooth' });
+                                    }}
+                                >
+                                    &#8250;
+                                </button>
+                            </div>
+                        )}
+                        {isModalOpen && (
+                            <div className="image-modal">
+                                <button className="close-modal" onClick={closeImageModal}>
+                                    <FaTimes />
+                                </button>
+                                <button className="modal-nav left" onClick={prevImage}>
+                                    <FaChevronLeft />
+                                </button>
+                                <img
+                                    src={currentProjectImages[selectedImageIndex]}
+                                    alt={`Fullscreen ${selectedImageIndex + 1}`}
+                                    className="modal-image"
+                                />
+                                <button className="modal-nav right" onClick={nextImage}>
+                                    <FaChevronRight />
+                                </button>
+                            </div>
+                        )}
+
                     </div>
                 ))}
             </div>
