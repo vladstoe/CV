@@ -54,10 +54,6 @@ const InfoPage = () => {
     window.location.href = 'mailto:vladmstoenescu6@gmail.com';
   };
 
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/40721258243', '_blank');
-  };
-
   const handleRomanianClick = () => {
     setClickedCount((prevCount) => prevCount + 1);
   };
