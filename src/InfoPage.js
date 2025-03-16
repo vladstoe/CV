@@ -108,10 +108,6 @@ const InfoPage = () => {
                   <i className="fa fa-envelope contact-icon"></i>
                   <span className="contact-info">24 years old</span>
                 </li>
-                <li onClick={handleWhatsAppClick} style={{ cursor: 'pointer' }}>
-                  <i className="fa fa-phone contact-icon"></i>
-                  <span className="contact-info phone">+40721258243</span>
-                </li>
                 <li onClick={handleEmailClick} style={{ cursor: 'pointer' }}>
                   <i className="fa fa-envelope contact-icon"></i>
                   <span className="contact-info mail">vladmstoenescu6@gmail.com</span>
