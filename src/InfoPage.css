@@ -24,13 +24,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
     background-color: transparent;
     /* Ensure background is transparent */
     border: none;
     /* No border */
     box-shadow: none;
-    margin-top: 15px;
+    margin-top: 65px;
     /* No box shadows */
 }
 

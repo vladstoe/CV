@@ -32,6 +32,35 @@ const projects = [
         iframeUrl: '',
     },
     {
+        id: 6,
+        title: 'Tradezell',
+        subtitle: 'April 2025 (Freelance)',
+        bulletPoints: [
+            'Led the end-to-end development of Tradezell as a freelance software developer, collaborating closely with the client to define, design, and deliver a feature-rich mobile trading platform',
+            'Tradezell enables users to trade items using a Tinder-style swiping interface, with real-time matching, chatting, and image management',
+            'Integrated Firebase for authentication, Firestore for data handling, and Storage for managing user-uploaded images and profiles',
+            'Developed swipeable image cards with internal tap navigation, item deletion tracking, and filters for item visibility based on status',
+            'Implemented 1:1 voice calling functionality using Agora SDK',
+            'Used Firebase Cloud Messaging (FCM) for push notifications with deep linking support, directing users to chats or matched items',
+            'Handled in-app purchases via RevenueCat, allowing users to buy upload slots ("availableImages") to manage inventory',
+            'Available on:&nbsp;<a href="https://apps.apple.com/app/tradezell-buy-sell-trade/id6744620839" target="_blank" rel="noopener noreferrer">iOS</a>&nbsp;and&nbsp;<a href="https://play.google.com/store/apps/details?id=com.tradezell" target="_blank" rel="noopener noreferrer">Android</a>',
+            '<span class="no-bullet tech-stack-heading">⚙️ <strong>Tech Stack</strong></span>',
+            '<strong>Frontend:</strong> React Native (TypeScript)',
+            '<strong>Backend:</strong> Firebase (Firestore, Auth, FCM, Storage, Functions), custom Node.js Cloud Functions',
+            '<strong>Voice:</strong> Agora SDK with Firestore for signaling',
+            '<strong>Monetization:</strong> RevenueCat for subscriptions and in-app payments across platforms'
+        ],
+        images: [
+            'WhatsApp Image 2025-04-21 at 14.22.44_c698f50a.jpg',
+            'WhatsApp Image 2025-04-14 at 14.48.48_b9e36dab.jpg',
+            'WhatsApp Image 2025-04-21 at 14.22.44_9a9ef197.jpg',
+            'WhatsApp Image 2025-04-21 at 14.22.44_94f0fa8c.jpg',
+            'WhatsApp Image 2025-04-14 at 14.48.49_20daa9ca.jpg',
+        ],
+        iframeUrl: '',
+    },
+
+    {
         id: 2,
         title: 'ArtVista Website',
         subtitle: 'May 2024 - August 2024',
